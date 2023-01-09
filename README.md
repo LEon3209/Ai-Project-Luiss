@@ -29,10 +29,10 @@ Concerning the machine learning models used in our project, the only part that n
 We built an ANN in which we can choose the number of hidden layers, the kernel initializer for the layers and their activation function. These are all hyperparameters that can influence the output. Also, we included an option that specifies whether the number of neurons per layer is constant or decreasing since one may out-perform the other depending on the problem. Also, the optimal number of hidden neurons should be around the mean of the input and output size.
 
 #### Representation of an ANN with constant number of neurons in the hidden layers
-![Alt text](images/constant.png "ANN with constant number of neurons in the hidden layers")
+![Alt text](images/constant.png?raw=true "ANN with constant number of neurons in the hidden layers")
 
 #### Representation of an ANN with decreasing number of neurons in the hidden layers
-![Alt text](images/decreasing.png "ANN with decreasing number of neurons in the hidden layers")
+![Alt text](images/decreasing.png?raw=true "ANN with decreasing number of neurons in the hidden layers")
 
 We added L1 and dropout regularizations as well L1 as the first will help in the features selection by the model by affecting the weights and the second will make our model more robust. 
 
