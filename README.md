@@ -29,10 +29,10 @@ Concerning the machine learning models used in our project, the only part that n
 We built an ANN in which we can choose the number of hidden layers, the kernel initializer for the layers and their activation function. These are all hyperparameters that can influence the output. Also, we included an option that specifies whether the number of neurons per layer is constant or decreasing since one may out-perform the other depending on the problem. Also, the optimal number of hidden neurons should be around the mean of the input and output size.
 
 #### Representation of an ANN with constant number of neurons in the hidden layers
-![Alt text](https://github.com/LEon3209/276931/blob/main/images/constant.png "ANN with constant number of neurons in the hidden layers")
+<img src="https://github.com/LEon3209/276931/blob/main/images/constant.png" height="300" width="600" >
 
 #### Representation of an ANN with decreasing number of neurons in the hidden layers
-![Alt text](https://github.com/LEon3209/276931/blob/main/images/constant.png "ANN with decreasing number of neurons in the hidden layers")
+<img src="https://github.com/LEon3209/276931/blob/main/images/decreasing.png" height="300" width="600" >
 
 We added L1 and dropout regularizations as well L1 as the first will help in the features selection by the model by affecting the weights and the second will make our model more robust. 
 
@@ -54,16 +54,22 @@ After getting the best model, we worked on feature selection. We used the correl
 
 After testing the three models on the validation set we got the following results:
 
+<img src="https://github.com/LEon3209/276931/blob/main/images/table.png" height="100" width="300" >
+
 After performing our best model on the test set we get the following results:
-MAE = , MSE = , $R^2$ = 
+MAE = 282.67, MSE = 129035.97, $R^2$ = 0.124
 
-After selecting the features we get:
-MAE = , MSE = , $R^2$ = 
+By implementing feature selection we found multiple a set of features that yielded a more precise model (but having large size), and another model working with a small set of attributes and still having a great perfomance.
 
+After selecting the features we get: 
+- For the best performing model in terms of error (large set of attributes)
+MAE = 284.08, MSE = 127394.79, $R^2$ = 0.135
+- For the best overall model (in terms of time performance, computational power and error, with a small set of attributes
+MAE = 288.18, MSE = 129653.92, $R^2$ = 0.12
+The choice of the model will be based on whether we need more precision or a faster model that requires less computational power. We should also consider the cost of collecting the data that is used to train the models, if we have a small number of attributes it will be easier to collect data. So we should consider if it's worth it to trade all of this for a slightly better precision. In our opinion, the second model is the optimal one for the reasons mentioned above. Although, the social media department should also participate in choosing the optimal solution depending on its needs.
 
 # Conclusions
 
 To conclude, we can say that we managed to come up with a good model to predict the number of shares. Although, this model works only to predict posts with a number of shares between 0 and 2000. The social media department of the company should provide us with more data in order to cover a larger range and get a more robust machine-learning solution.
 There are a couple of questions that are not fully answered by our work:
-The first is about the relationship between the independent variables and the dependent variables. Are we sure that the dataset provided to us by the social media department has the right attributes to use in order to predict the number of shares? The low value of $R^2$ that we talked about before indicates that independent variables may not be enough to explain the variation of our target variable. So we might need a deeper study of the feature that might influence the outcome of our dependent variable.
-The second question, that relates to the first question as well, is about our feature selection. Is there a way to improve also the performance of our models in terms of error using a set of the attributes from the dataset?
+The first is about the relationship between the independent variables and the dependent variables. Are we sure that the dataset provided to us by the social media department has the right attributes to use in order to predict the number of shares? The low value of $R^2$ we talked about before indicates that independent variables may not be enough to explain the variation of our target variable. So we might need a deeper study of the feature that might influence the outcome of our dependent variable.
