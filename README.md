@@ -47,7 +47,7 @@ After removing the outliers, we splitted the dataset into training, validation a
 
 We tested three moddels in our project, Multivariable Linear Regression, Random Forest and Artificial Neural Networks (ANN). We started by testing the models with the default parameters on the validation set and then we did a 10-fold cross-validation for Random Forest and ANN in order to find the best hyperparameters for each model. In the end, we tested the models on the validation set. We used the mean absolute error (MAE) to evaluate our models. Since we knew the range of our dependent variable it was easier to interpret this metric and evaluate our models as MAE measures the average error made in predicting each output. We tried to use $R^2$ as well, the values were low but still positive, that's due to the social nature of our experiment as the independent variables are not explaining much in the variation of the dependent variable. In the end, we relied on MAE.
 
-After getting the best model, we worked on feature selection. We used the correlation with the dependent variable, the important features for Random Forest in order to choose a set of the attributesand some feature selection methods from sklearn. The performance was pretty much the same in terms of errors, but we reduced the number of attributes used from 57 to 16, with the possibility of further selection of smaller sets of attributes. So now our model is faster and requires less computational resources while still performing as good as before.
+After getting the best model, we worked on feature selection. We used the correlation with the dependent variable, the important features for Random Forest in order to choose a set of the attributes and some feature selection methods from sklearn. The performance was pretty much the same in terms of errors, but we managed to reduce the number of attributes used from 57 to 16, with the possibility of further selection of smaller sets of attributes. So now our model is faster and requires less computational resources while still performing as good as before.
 
 
 # Results
@@ -56,20 +56,26 @@ After testing the three models on the validation set we got the following result
 
 <img src="https://github.com/LEon3209/276931/blob/main/images/table.png" height="100" width="300" >
 
-After performing our best model on the test set we get the following results:
+ANN performs better by comparing the MAE (since we relied on it the most as metric in training, cv...), and we should consider as well that it's more robust since we used L1 and Dropout regularizations.
+
+After performing our best ANN model on the test set we get the following results:
 MAE = 282.67, MSE = 129035.97, $R^2$ = 0.124
 
 By implementing feature selection we found multiple a set of features that yielded a more precise model (but having large size), and another model working with a small set of attributes and still having a great perfomance.
 
 After selecting the features we get: 
+
 - For the best performing model in terms of error (large set of attributes)
 MAE = 284.08, MSE = 127394.79, $R^2$ = 0.135
+
 - For the best overall model (in terms of time performance, computational power and error, with a small set of attributes
 MAE = 288.18, MSE = 129653.92, $R^2$ = 0.12
+
 The choice of the model will be based on whether we need more precision or a faster model that requires less computational power. We should also consider the cost of collecting the data that is used to train the models, if we have a small number of attributes it will be easier to collect data. So we should consider if it's worth it to trade all of this for a slightly better precision. In our opinion, the second model is the optimal one for the reasons mentioned above. Although, the social media department should also participate in choosing the optimal solution depending on its needs.
 
 # Conclusions
 
 To conclude, we can say that we managed to come up with a good model to predict the number of shares. Although, this model works only to predict posts with a number of shares between 0 and 2000. The social media department of the company should provide us with more data in order to cover a larger range and get a more robust machine-learning solution.
-There are a couple of questions that are not fully answered by our work:
+
+There is a question that is not fully answered by our work:
 The first is about the relationship between the independent variables and the dependent variables. Are we sure that the dataset provided to us by the social media department has the right attributes to use in order to predict the number of shares? The low value of $R^2$ we talked about before indicates that independent variables may not be enough to explain the variation of our target variable. So we might need a deeper study of the feature that might influence the outcome of our dependent variable.
