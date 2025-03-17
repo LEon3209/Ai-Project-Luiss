@@ -10,7 +10,7 @@
 
 # Introduction:
 
-In this project, we will help the social media department of a company analyse its communications' success. They want to develop a tool that predicts the number of shares on social media given the contents and the supposed publication time. Therefore they have collected a dataset with multiple features to help us design the best machine-learning solution.
+In this project, we will help the social media department of a company analyse its communications' success. They want to develop a tool that predicts the number of shares on social media given the contents and the supposed publication time. Therefore they have collected a dataset with multiple features to help us design the best machine-learning solution. 
 
 
 # Methods 
